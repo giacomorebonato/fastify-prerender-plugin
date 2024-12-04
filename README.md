@@ -5,9 +5,7 @@ This Fastify plugin detects when the request is made from a bot [using isbot](ht
 
 ## Requirements
 
-1. install Chrome in a postinstall script
-   `"postinstall": "pnpm dlx @puppeteer/browsers install chrome@stable"`
-2. this plugin works best when Fastify serves the HTML page for the SPA
+This plugin works best when Fastify serves the HTML page for the SPA.
 
 ## Example
 

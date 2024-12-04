@@ -1,5 +1,9 @@
 {
   "name": "fastify-prerender-plugin",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:giacomorebonato/fastify-prerender-plugin.git"
+  },
   "type": "module",
   "version": "1.0.0",
   "description": "Prerender SPA pages for bots",
@@ -11,6 +15,7 @@
   ],
   "scripts": {
     "build": "pkgroll",
+    "postinstall": "pnpm dlx @puppeteer/browsers install chrome@stable",
     "test": "npx playwright test"
   },
   "keywords": [
