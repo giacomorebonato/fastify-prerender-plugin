@@ -1,44 +1,41 @@
 {
-  "name": "fastify-prerender-plugin",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:giacomorebonato/fastify-prerender-plugin.git"
-  },
-  "type": "module",
-  "version": "1.0.1",
-  "description": "Prerender SPA pages for bots",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.cts",
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "build": "pkgroll",
-    "postinstall": "pnpm dlx @puppeteer/browsers install chrome@stable",
-    "release": "release-it",
-    "test": "npx playwright test"
-  },
-  "keywords": [
-    "fastify",
-    "prerender",
-    "spa"
-  ],
-  "author": "Giacomo Rebonato",
-  "license": "MIT",
-  "devDependencies": {
-    "@playwright/test": "^1.49.0",
-    "@types/node": "^22.10.1",
-    "pkgroll": "^2.5.1",
-    "release-it": "^17.10.0",
-    "typescript": "^5.7.2"
-  },
-  "peerDependencies": {
-    "fastify": "^5.1.0"
-  },
-  "dependencies": {
-    "fastify-plugin": "^5.0.1",
-    "isbot": "^5.1.17",
-    "puppeteer": "^23.10.0"
-  }
+	"name": "fastify-prerender-plugin",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:giacomorebonato/fastify-prerender-plugin.git"
+	},
+	"type": "module",
+	"version": "1.0.1",
+	"description": "Prerender SPA pages for bots",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.cts",
+	"files": ["dist"],
+	"scripts": {
+		"build": "pkgroll",
+		"postinstall": "pnpm dlx @puppeteer/browsers install chrome@stable",
+		"release": "release-it",
+		"test": "npx playwright test",
+		"format": "pnpm biome check --write"
+	},
+	"keywords": ["fastify", "prerender", "spa"],
+	"author": "Giacomo Rebonato",
+	"license": "MIT",
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@playwright/test": "^1.49.0",
+		"@types/node": "^22.10.1",
+		"pkgroll": "^2.5.1",
+		"release-it": "^17.10.0",
+		"release-it-pnpm": "^4.6.3",
+		"typescript": "^5.7.2"
+	},
+	"peerDependencies": {
+		"fastify": "^5.1.0"
+	},
+	"dependencies": {
+		"fastify-plugin": "^5.0.1",
+		"isbot": "^5.1.17",
+		"puppeteer": "^23.10.0"
+	}
 }

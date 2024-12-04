@@ -4,15 +4,13 @@ import { prerenderPlugin } from '../src/prerender-plugin.ts'
 const app = fastify()
 
 await app.register(prerenderPlugin, {
-  urls: [
-    '/'
-  ],
-  host: 'localhost',
-  port: 3_000
+	urls: ['/'],
+	host: 'localhost',
+	port: 3_000,
 })
 
 app.get('/', (request, reply) => {
-  reply.type('text/html').send(`
+	reply.type('text/html').send(`
 <html>
   <body>
     <div id="root"></div>
