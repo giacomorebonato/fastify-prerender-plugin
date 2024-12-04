@@ -1,0 +1,35 @@
+{
+  "name": "fastify-prerender-plugin",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Prerender SPA pages for bots",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "pkgroll",
+    "test": "npx playwright test"
+  },
+  "keywords": [
+    "fastify", "prerender", "spa"
+  ],
+  "author": "Giacomo Rebonato",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.10.1",
+    "pkgroll": "^2.5.1",
+    "typescript": "^5.7.2"
+  },
+  "peerDependencies": {
+    "fastify": "^5.1.0"
+  },
+  "dependencies": {
+    "fastify-plugin": "^5.0.1",
+    "isbot": "^5.1.17",
+    "puppeteer": "^23.10.0"
+  }
+}
