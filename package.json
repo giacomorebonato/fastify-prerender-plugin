@@ -16,6 +16,7 @@
   "scripts": {
     "build": "pkgroll",
     "postinstall": "pnpm dlx @puppeteer/browsers install chrome@stable",
+    "release": "release-it",
     "test": "npx playwright test"
   },
   "keywords": [
@@ -29,6 +30,7 @@
     "@playwright/test": "^1.49.0",
     "@types/node": "^22.10.1",
     "pkgroll": "^2.5.1",
+    "release-it": "^17.10.0",
     "typescript": "^5.7.2"
   },
   "peerDependencies": {
