@@ -7,7 +7,7 @@ export const prerenderPlugin = fastifyPlugin<{ urls: (string | RegExp)[], host: 
 		app.addHook('onRequest', async (request, reply) => {
 			const requestFromBot = isbot(request.headers['user-agent'])
 
-			if (!requestFromBot) {
+			if (!requestFromBot || request.method !== 'get') {
 				return
 			}
 
