@@ -18,13 +18,14 @@
 		"test": "npx playwright test",
 		"format": "pnpm biome check --write"
 	},
-	"keywords": ["fastify", "prerender", "spa"],
+	"keywords": ["fastify", "prerender", "spa", "ssr"],
 	"author": "Giacomo Rebonato",
 	"license": "MIT",
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
 		"@playwright/test": "^1.49.0",
 		"@types/node": "^22.10.1",
+		"lefthook": "^1.8.5",
 		"pkgroll": "^2.5.1",
 		"release-it": "^17.10.0",
 		"release-it-pnpm": "^4.6.3",
