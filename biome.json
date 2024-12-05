@@ -7,7 +7,7 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": ["dist/"]
+		"ignore": ["dist/", "chrome/"]
 	},
 	"formatter": {
 		"enabled": true,
