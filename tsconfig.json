@@ -5,6 +5,7 @@
 		"rootDir": "./src",
 		"moduleResolution": "nodenext",
 		"allowImportingTsExtensions": true,
+		"verbatimModuleSyntax": true,
 		"noEmit": true,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
