@@ -12,5 +12,5 @@
 		"strict": true,
 		"skipLibCheck": true
 	},
-	"exclude": ["playwright.config.ts"]
+	"exclude": ["playwright.config.ts", "tests/"]
 }
