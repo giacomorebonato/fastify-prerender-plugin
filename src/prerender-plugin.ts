@@ -6,48 +6,54 @@ export const prerenderPlugin = fastifyPlugin<{
 	urls: (string | RegExp)[]
 	host: string
 	port: number
-}>((app, options, done) => {
-	app.addHook('onRequest', async (request, reply) => {
-		const requestFromBot = isbot(request.headers['user-agent'])
+}>(
+	(app, options, done) => {
+		app.addHook('onRequest', async (request, reply) => {
+			const requestFromBot = isbot(request.headers['user-agent'])
 
-		if (!requestFromBot || request.method !== 'GET') {
-			return
-		}
+			if (!requestFromBot || request.method !== 'GET') {
+				return
+			}
 
-		request.log.info({ requestFromBot })
+			request.log.info({ requestFromBot })
 
-		let matches = false
+			let matches = false
 
-		for (const url of options.urls) {
-			if (typeof url === 'string') {
-				if (url === request.url) {
-					matches = true
+			for (const url of options.urls) {
+				if (typeof url === 'string') {
+					if (url === request.url) {
+						matches = true
 
-					break
-				}
-			} else {
-				if (url.test(request.url)) {
-					matches = true
+						break
+					}
+				} else {
+					if (url.test(request.url)) {
+						matches = true
 
-					break
+						break
+					}
 				}
 			}
-		}
 
-		if (!matches) {
-			return
-		}
+			if (!matches) {
+				return
+			}
 
-		const url = `http://${options.host}:${options.port}${request.url}`
-		const html: string =
-			(await requestFromBrowser(url).catch((error) => {
-				console.error(error)
-			})) ?? ''
+			const url = `http://${options.host}:${options.port}${request.url}`
+			const html: string =
+				(await requestFromBrowser(url).catch((error) => {
+					console.error(error)
+				})) ?? ''
 
-		reply.status(200).type('text/html').send(html)
-	})
+			reply.status(200).type('text/html').send(html)
+		})
 
-	done()
-})
+		done()
+	},
+	{
+		fastify: '^5.x',
+		name: 'fastify-prerender',
+	},
+)
 
 export default prerenderPlugin
