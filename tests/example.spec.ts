@@ -27,7 +27,11 @@ test.describe('when JS is disabled and user agent is a bot', () => {
 	})
 	test('applies browser JS ', async ({ page }) => {
 		await page.goto('http://localhost:3000')
-
 		await expect(page.getByText('Hello World')).toBeVisible()
+
+		for (let i = 0; i < 50; i++) {
+			await page.reload()
+			await expect(page.getByText('Hello World')).toBeVisible()
+		}
 	})
 })
