@@ -1,5 +1,9 @@
+import Fs from 'node:fs'
+import Path from 'node:path'
 import { fastifyPlugin } from 'fastify-plugin'
+import filenamifyUrl from 'filenamify-url'
 import { isbot } from 'isbot'
+import tmp from 'tmp'
 import { requestFromBrowser } from './request-from-browser.ts'
 
 export const prerenderPlugin = fastifyPlugin<{
@@ -8,6 +12,8 @@ export const prerenderPlugin = fastifyPlugin<{
 	port: number
 }>(
 	(app, options, done) => {
+		const tmpobj = tmp.dirSync()
+
 		app.addHook('onRequest', async (request, reply) => {
 			const requestFromBot = isbot(request.headers['user-agent'])
 
@@ -40,10 +46,26 @@ export const prerenderPlugin = fastifyPlugin<{
 			}
 
 			const url = `http://${options.host}:${options.port}${request.url}`
+			const filepath = Path.join(tmpobj.name, filenamifyUrl(url))
+
+			if (Fs.existsSync(filepath)) {
+				const fileStat = Fs.statSync(filepath)
+				const fileAgeInMinutes =
+					(Date.now() - fileStat.mtime.getTime()) / 1_000 / 60
+
+				if (fileAgeInMinutes <= 5) {
+					reply.status(200).type('text/html').send(Fs.readFileSync(filepath))
+				} else {
+					Fs.rmdirSync(filepath)
+				}
+			}
+
 			const html: string =
 				(await requestFromBrowser(url).catch((error) => {
 					console.error(error)
 				})) ?? ''
+
+			Fs.writeFileSync(filepath, html)
 
 			reply.status(200).type('text/html').send(html)
 		})
