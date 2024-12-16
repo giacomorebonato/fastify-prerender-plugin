@@ -60,6 +60,10 @@ export const prerenderPlugin = fastifyPlugin<{
 				}
 			}
 
+			request.log.info(`request-from-browser`, {
+				url,
+			})
+
 			const html: string =
 				(await requestFromBrowser(url).catch((error) => {
 					console.error(error)
