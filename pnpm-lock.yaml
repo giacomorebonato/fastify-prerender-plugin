@@ -14,15 +14,15 @@ importers:
       fastify-plugin:
         specifier: ^5.0.1
         version: 5.0.1
-      filenamify-url:
-        specifier: ^3.1.0
-        version: 3.1.0
       isbot:
         specifier: ^5.1.17
         version: 5.1.17
       puppeteer:
         specifier: ^23.10.0
         version: 23.10.0(typescript@5.7.2)
+      sanitize-filename:
+        specifier: ^1.6.3
+        version: 1.6.3
       tmp:
         specifier: ^0.2.3
         version: 0.2.3
@@ -1007,10 +1007,6 @@ packages:
     resolution: {integrity: sha512-2Sd4ShcWxbx6OY1IHyla/CVNwvg7XwZVoXZHcSu9w9SReNP1EzzD5T8NWKIR38fIqEns9kDWKUQTXXAmlDrdPg==}
     engines: {node: '>=12'}
 
-  escape-string-regexp@5.0.0:
-    resolution: {integrity: sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==}
-    engines: {node: '>=12'}
-
   escodegen@2.1.0:
     resolution: {integrity: sha512-2NlIDTwUWJN0mRPQOdtQBzbUHvdGY2P1VXSyU83Q3xKxM7WHX2Ql8dKq782Q9TgQUNOLEzEYu9bzLNj1q88I5w==}
     engines: {node: '>=6.0'}
@@ -1113,18 +1109,6 @@ packages:
   figures@6.1.0:
     resolution: {integrity: sha512-d+l3qxjSesT4V7v2fh+QnmFnUWv9lSpjarhShNTgBOfA0ttejbQUAlHLitbjkoRiDulW0OPoQPYIGhIC8ohejg==}
     engines: {node: '>=18'}
-
-  filename-reserved-regex@3.0.0:
-    resolution: {integrity: sha512-hn4cQfU6GOT/7cFHXBqeBg2TbrMBgdD0kcjLhvSQYYwm3s4B6cjvBfb7nBALJLAXqmU5xajSa7X2NnUud/VCdw==}
-    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
-
-  filenamify-url@3.1.0:
-    resolution: {integrity: sha512-Dvv4b4m1l5LiIo05049Q7Nk6v5yp6/E68WF3lm7tzIukATXuAFWIWiCi3N7EZ3jat6uvdNUR1WXqUc+oysFLAw==}
-    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
-
-  filenamify@5.1.1:
-    resolution: {integrity: sha512-M45CbrJLGACfrPOkrTp3j2EcO9OBkKUYME0eiqOCa7i2poaklU0jhlIaMlr8ijLorT0uLAzrn3qXOp5684CkfA==}
-    engines: {node: '>=12.20'}
 
   fill-range@7.1.1:
     resolution: {integrity: sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==}
@@ -1257,10 +1241,6 @@ packages:
   human-signals@8.0.0:
     resolution: {integrity: sha512-/1/GPCpDUCCYwlERiYjxoczfP0zfvZMU/OWgQPMya9AbAE24vseigFdhAMObpc8Q4lc/kjutPfUddDYyAmejnA==}
     engines: {node: '>=18.18.0'}
-
-  humanize-url@3.0.0:
-    resolution: {integrity: sha512-oWcYrKNVa+bCX9ACFZ85H8l1+QcwBJ64xH5+PHYoLe/Y5aToOfw3s3OZqRA/OyJPcWOXuDLo3qil5CYvTMtp0A==}
-    engines: {node: '>=12.20'}
 
   iconv-lite@0.4.24:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
@@ -1676,10 +1656,6 @@ packages:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
     engines: {node: '>=0.10.0'}
 
-  normalize-url@7.2.0:
-    resolution: {integrity: sha512-uhXOdZry0L6M2UIo9BTt7FdpBDiAGN/7oItedQwPKh8jh31ZlvC8U9Xl/EJ3aijDHaywXTW3QbZ6LuCocur1YA==}
-    engines: {node: '>=12.20'}
-
   npm-run-path@4.0.1:
     resolution: {integrity: sha512-S48WzZW777zhNIrn7gxOlISNAqi9ZC/uQFnRdbeIHhZhCA6UqpkOT8T1G7BvfdgP4Er8gF4sUbaS0i7QvIfCWw==}
     engines: {node: '>=8'}
@@ -2028,6 +2004,9 @@ packages:
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
 
+  sanitize-filename@1.6.3:
+    resolution: {integrity: sha512-y/52Mcy7aw3gRm7IrcGDFx/bCk4AhRh2eI9luHOQM86nZsqwiRkkq2GekHXBBD+SmPidc8i2PqtYZl+pWJ8Oeg==}
+
   scule@1.3.0:
     resolution: {integrity: sha512-6FtHJEvt+pVMIB9IBY+IcCJ6Z5f1iQnytgyfKMhDKgmzYG+TeH/wx1y3l27rshSbLiSanrR9ffZDrEsmjlQF2g==}
 
@@ -2148,10 +2127,6 @@ packages:
     resolution: {integrity: sha512-4gB8na07fecVVkOI6Rs4e7T6NOTki5EmL7TUduTs6bu3EdnSycntVJ4re8kgZA+wx9IueI2Y11bfbgwtzuE0KQ==}
     engines: {node: '>=0.10.0'}
 
-  strip-outer@2.0.0:
-    resolution: {integrity: sha512-A21Xsm1XzUkK0qK1ZrytDUvqsQWict2Cykhvi0fBQntGG5JSprESasEyV1EZ/4CiR5WB5KjzLTrP/bO37B0wPg==}
-    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
-
   stubborn-fs@1.2.5:
     resolution: {integrity: sha512-H2N9c26eXjzL/S/K+i/RHHcFanE74dptvvjM8iwzwbVcWY/zjBbgRqF3K0DY4+OD+uTTASTBvDoxPDaPN02D7g==}
 
@@ -2206,9 +2181,8 @@ packages:
     resolution: {integrity: sha512-/m8M+2BJUpoJdgAHoG+baCwBT+tf2VraSfkBgl0Y00qIWt41DJ8R5B8nsEw0I58YwF5IZH6z24/2TobDKnqSWw==}
     engines: {node: '>=12'}
 
-  trim-repeated@2.0.0:
-    resolution: {integrity: sha512-QUHBFTJGdOwmp0tbOG505xAgOp/YliZP/6UgafFXYZ26WT1bvQmSMJUvkeVSASuJJHbqsFbynTvkd5W8RBTipg==}
-    engines: {node: '>=12'}
+  truncate-utf8-bytes@1.0.2:
+    resolution: {integrity: sha512-95Pu1QXQvruGEhv62XCMO3Mm90GscOCClvrIUwCM0PYOXK3kaF3l3sIHxx71ThJfcbM2O5Au6SO3AWCSEfW4mQ==}
 
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
@@ -2271,6 +2245,9 @@ packages:
 
   urlpattern-polyfill@10.0.0:
     resolution: {integrity: sha512-H/A06tKD7sS1O1X2SshBVeA5FLycRpjqiBeqGKmBwBDBy28EnRjORxTNe269KSSr5un5qyWi1iL61wLxpd+ZOg==}
+
+  utf8-byte-length@1.0.5:
+    resolution: {integrity: sha512-Xn0w3MtiQ6zoz2vFyUVruaCL53O/DwUvkEeOvj+uulMm0BkUGYWmBYVyElqZaSLhY6ZD0ulfU3aBra2aVT4xfA==}
 
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
@@ -3234,8 +3211,6 @@ snapshots:
 
   escape-goat@4.0.0: {}
 
-  escape-string-regexp@5.0.0: {}
-
   escodegen@2.1.0:
     dependencies:
       esprima: 4.0.1
@@ -3401,19 +3376,6 @@ snapshots:
     dependencies:
       is-unicode-supported: 2.1.0
 
-  filename-reserved-regex@3.0.0: {}
-
-  filenamify-url@3.1.0:
-    dependencies:
-      filenamify: 5.1.1
-      humanize-url: 3.0.0
-
-  filenamify@5.1.1:
-    dependencies:
-      filename-reserved-regex: 3.0.0
-      strip-outer: 2.0.0
-      trim-repeated: 2.0.0
-
   fill-range@7.1.1:
     dependencies:
       to-regex-range: 5.0.1
@@ -3556,10 +3518,6 @@ snapshots:
   human-signals@5.0.0: {}
 
   human-signals@8.0.0: {}
-
-  humanize-url@3.0.0:
-    dependencies:
-      normalize-url: 7.2.0
 
   iconv-lite@0.4.24:
     dependencies:
@@ -3889,8 +3847,6 @@ snapshots:
   node-fetch-native@1.6.4: {}
 
   normalize-path@3.0.0: {}
-
-  normalize-url@7.2.0: {}
 
   npm-run-path@4.0.1:
     dependencies:
@@ -4346,6 +4302,10 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
+  sanitize-filename@1.6.3:
+    dependencies:
+      truncate-utf8-bytes: 1.0.2
+
   scule@1.3.0: {}
 
   secure-json-parse@2.7.0: {}
@@ -4452,8 +4412,6 @@ snapshots:
 
   strip-json-comments@2.0.1: {}
 
-  strip-outer@2.0.0: {}
-
   stubborn-fs@1.2.5: {}
 
   supports-color@7.2.0:
@@ -4512,9 +4470,9 @@ snapshots:
 
   toad-cache@3.7.0: {}
 
-  trim-repeated@2.0.0:
+  truncate-utf8-bytes@1.0.2:
     dependencies:
-      escape-string-regexp: 5.0.0
+      utf8-byte-length: 1.0.5
 
   tslib@2.8.1: {}
 
@@ -4563,6 +4521,8 @@ snapshots:
   url-join@5.0.0: {}
 
   urlpattern-polyfill@10.0.0: {}
+
+  utf8-byte-length@1.0.5: {}
 
   util-deprecate@1.0.2: {}
 

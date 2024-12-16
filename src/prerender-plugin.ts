@@ -1,8 +1,8 @@
 import Fs from 'node:fs'
 import Path from 'node:path'
 import { fastifyPlugin } from 'fastify-plugin'
-import filenamifyUrl from 'filenamify-url'
 import { isbot } from 'isbot'
+import sanitize from 'sanitize-filename'
 import tmp from 'tmp'
 import { requestFromBrowser } from './request-from-browser.ts'
 
@@ -46,7 +46,7 @@ export const prerenderPlugin = fastifyPlugin<{
 			}
 
 			const url = `http://${options.host}:${options.port}${request.url}`
-			const filepath = Path.join(tmpobj.name, filenamifyUrl(url))
+			const filepath = Path.join(tmpobj.name, sanitize(`${url}.html`))
 
 			if (Fs.existsSync(filepath)) {
 				const fileStat = Fs.statSync(filepath)
