@@ -54,10 +54,12 @@ export const prerenderPlugin = fastifyPlugin<{
 					(Date.now() - fileStat.mtime.getTime()) / 1_000 / 60
 
 				if (fileAgeInMinutes <= 5) {
-					reply.status(200).type('text/html').send(Fs.readFileSync(filepath))
-				} else {
-					Fs.rmdirSync(filepath)
+					return reply
+						.status(200)
+						.type('text/html')
+						.send(Fs.readFileSync(filepath))
 				}
+				Fs.rmdirSync(filepath)
 			}
 
 			request.log.info(`request-from-browser`, {
