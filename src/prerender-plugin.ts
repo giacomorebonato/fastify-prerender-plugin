@@ -62,9 +62,7 @@ export const prerenderPlugin = fastifyPlugin<{
 				Fs.rmdirSync(filepath)
 			}
 
-			request.log.info(`request-from-browser`, {
-				url,
-			})
+			request.log.info(`request-from-browser: ${url}`)
 
 			const html: string =
 				(await requestFromBrowser(url).catch((error) => {
