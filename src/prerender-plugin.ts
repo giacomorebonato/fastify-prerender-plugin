@@ -63,7 +63,7 @@ export const prerenderPlugin = fastifyPlugin<{
 						.type('text/html')
 						.send(Fs.readFileSync(filepath))
 				}
-				Fs.rmdirSync(filepath)
+				Fs.rmSync(filepath)
 			}
 
 			request.log.info(`request-from-browser: ${url}`)
