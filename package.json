@@ -5,7 +5,7 @@
 		"url": "git@github.com:giacomorebonato/fastify-prerender-plugin.git"
 	},
 	"type": "module",
-	"version": "1.0.9",
+	"version": "1.0.10",
 	"description": "Prerender SPA pages for bots",
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.mjs",
