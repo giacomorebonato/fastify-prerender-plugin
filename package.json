@@ -14,7 +14,7 @@
 	"scripts": {
 		"build": "pkgroll",
 		"release": "release-it",
-		"postinstall": "npx playwright install-deps chromium",
+		"postinstall": "pnpm exec playwright install --with-deps chromium",
 		"test": "npx playwright test",
 		"format": "pnpm biome check --write"
 	},
