@@ -20,9 +20,5 @@ export default defineConfig({
 		command: 'node --experimental-strip-types tests/server.ts',
 		url: 'http://127.0.0.1:3000',
 		reuseExistingServer: !process.env.CI,
-		env: {
-			PUPPETEER_EXECUTABLE_PATH: process.env
-				.PUPPETEER_EXECUTABLE_PATH as string,
-		},
 	},
 })

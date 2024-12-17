@@ -1,6 +1,6 @@
 # fastify-prerender-plugin
 
-Have you ever had a SPA that renders some pages that need to be crawled by Google, Facebook, etc.? This Fastify plugin detects when the request is made from a bot [using isbot](https://www.npmjs.com/package/isbot) and returns the HTML rendered by Puppeteer in that case.
+Have you ever had a SPA that renders some pages that need to be crawled by Google, Facebook, etc.? This Fastify plugin detects when the request is made from a bot [using isbot](https://www.npmjs.com/package/isbot) and returns the HTML rendered by Playwright in that case.
 
 ## Requirements
 
@@ -60,7 +60,7 @@ The `prerenderPlugin` accepts the following options:
 The following scripts are available in the `package.json`:
 
 - `build`: Builds the project using `pkgroll`.
-- `postinstall`: Installs the stable version of Chrome using Puppeteer.
+- `postinstall`: Installs the stable version of Chrome using Playwright.
 - `release`: Releases the project using `release-it`.
 - `test`: Runs the tests using Playwright.
 - `format`: Formats the code using Biome.

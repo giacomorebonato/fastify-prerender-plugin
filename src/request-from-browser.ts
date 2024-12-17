@@ -1,8 +1,7 @@
-import puppeteer from 'puppeteer-core'
+import { chromium } from '@playwright/test'
 
 export async function requestFromBrowser(url: string): Promise<string> {
-	const browser = await puppeteer.launch({
-		executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
+	const browser = await chromium.launch({
 		args: [
 			'--disable-dev-shm-usage',
 			'--no-sandbox',
@@ -18,13 +17,11 @@ export async function requestFromBrowser(url: string): Promise<string> {
 			'--disable-gpu', // Disable GPU hardware acceleration
 		],
 		headless: true,
-		protocolTimeout: 30_000,
 	})
-	const page = await browser.newPage()
-
-	await page.setUserAgent(
-		'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36',
-	)
+	const page = await browser.newPage({
+		userAgent:
+			'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36',
+	})
 
 	await page.goto(url)
 	let html: string

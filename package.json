@@ -14,7 +14,8 @@
 	"scripts": {
 		"build": "pkgroll",
 		"release": "release-it",
-		"test": "PUPPETEER_EXECUTABLE_PATH=/opt/homebrew/bin/chromium npx playwright test",
+		"postinstall": "npx playwright install-deps chromium",
+		"test": "npx playwright test",
 		"format": "pnpm biome check --write"
 	},
 	"keywords": ["fastify", "prerender", "spa", "ssr"],
@@ -22,7 +23,6 @@
 	"license": "MIT",
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
-		"@playwright/test": "^1.49.0",
 		"@types/node": "^22.10.1",
 		"@types/tmp": "^0.2.6",
 		"lefthook": "^1.8.5",
@@ -35,9 +35,9 @@
 		"fastify": "^5.1.0"
 	},
 	"dependencies": {
+		"@playwright/test": "^1.49.0",
 		"fastify-plugin": "^5.0.1",
 		"isbot": "^5.1.17",
-		"puppeteer-core": "^23.10.4",
 		"sanitize-filename": "^1.6.3",
 		"tmp": "^0.2.3"
 	},
