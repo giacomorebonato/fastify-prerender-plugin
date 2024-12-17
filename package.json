@@ -13,7 +13,6 @@
 	"files": ["dist"],
 	"scripts": {
 		"build": "pkgroll",
-		"postinstall": "pnpm dlx @puppeteer/browsers install chrome@stable",
 		"release": "release-it",
 		"test": "npx playwright test",
 		"format": "pnpm biome check --write"
