@@ -22,8 +22,7 @@ test.describe('when JS is disabled and user agent is not a bot', () => {
 test.describe('when JS is disabled and user agent is a bot', () => {
 	test.use({
 		javaScriptEnabled: false,
-		userAgent:
-			'Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
+		userAgent: 'curl/7.64.1',
 	})
 	test('applies browser JS ', async ({ page }) => {
 		await page.goto('http://localhost:3000')

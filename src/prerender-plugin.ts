@@ -10,6 +10,7 @@ export const prerenderPlugin = fastifyPlugin<{
 	urls: (string | RegExp)[]
 	host: string
 	port: number
+	tmpPath?: string
 }>(
 	(app, options, done) => {
 		const tmpobj = tmp.dirSync()
@@ -46,7 +47,10 @@ export const prerenderPlugin = fastifyPlugin<{
 			}
 
 			const url = `http://${options.host}:${options.port}${request.url}`
-			const filepath = Path.join(tmpobj.name, sanitize(`${url}.html`))
+			const filepath = Path.join(
+				options.tmpPath ?? tmpobj.name,
+				sanitize(`${url}.html`),
+			)
 
 			if (Fs.existsSync(filepath)) {
 				const fileStat = Fs.statSync(filepath)
@@ -69,7 +73,11 @@ export const prerenderPlugin = fastifyPlugin<{
 					console.error(error)
 				})) ?? ''
 
-			Fs.writeFileSync(filepath, html)
+			try {
+				Fs.writeFileSync(filepath, html)
+			} catch (error) {
+				request.log.error(`Couldn't write cache in ${filepath}`)
+			}
 
 			reply.status(200).type('text/html').send(html)
 		})
