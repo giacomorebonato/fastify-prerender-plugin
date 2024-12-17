@@ -13,8 +13,12 @@ export async function requestFromBrowser(url: string): Promise<string> {
 			'--disable-extensions',
 			'--disable-sync',
 			'--disable-translate',
+			'--single-process', // Run in a single process
+			'--no-zygote', // Disable the zygote process for reduced memory usage
+			'--disable-gpu', // Disable GPU hardware acceleration
 		],
 		headless: true,
+		protocolTimeout: 30_000,
 	})
 	const page = await browser.newPage()
 
