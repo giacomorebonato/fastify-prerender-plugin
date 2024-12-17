@@ -14,7 +14,7 @@
 	"scripts": {
 		"build": "pkgroll",
 		"release": "release-it",
-		"test": "npx playwright test",
+		"test": "PUPPETEER_EXECUTABLE_PATH=/opt/homebrew/bin/chromium npx playwright test",
 		"format": "pnpm biome check --write"
 	},
 	"keywords": ["fastify", "prerender", "spa", "ssr"],

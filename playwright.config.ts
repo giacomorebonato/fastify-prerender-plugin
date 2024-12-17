@@ -21,7 +21,8 @@ export default defineConfig({
 		url: 'http://127.0.0.1:3000',
 		reuseExistingServer: !process.env.CI,
 		env: {
-			PUPPETEER_EXECUTABLE_PATH: '/opt/homebrew/bin/chromium',
+			PUPPETEER_EXECUTABLE_PATH: process.env
+				.PUPPETEER_EXECUTABLE_PATH as string,
 		},
 	},
 })
