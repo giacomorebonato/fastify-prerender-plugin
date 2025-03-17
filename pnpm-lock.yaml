@@ -19,7 +19,7 @@ importers:
         version: 5.0.1
       isbot:
         specifier: ^5.1.17
-        version: 5.1.22
+        version: 5.1.25
       sanitize-filename:
         specifier: ^1.6.3
         version: 1.6.3
@@ -1387,8 +1387,8 @@ packages:
     resolution: {integrity: sha512-UcVfVfaK4Sc4m7X3dUSoHoozQGBEFeDC+zVo06t98xe8CzHSZZBekNXH+tu0NalHolcJ/QAGqS46Hef7QXBIMw==}
     engines: {node: '>=16'}
 
-  isbot@5.1.22:
-    resolution: {integrity: sha512-RqCFY3cJy3c2y1I+rMn81cfzAR4XJwfPBC+M8kffUjbPzxApzyyv7Tbm1C/gXXq2dSCuD238pKFEWlQMTWsTFw==}
+  isbot@5.1.25:
+    resolution: {integrity: sha512-mqU76fmT7cpGG0JX1EzhCZIC+xovpH6TD2SAK18alonk0RG/RgChpGduJTYzRaq9a0COoFA99M9JVtEUOcScIw==}
     engines: {node: '>=18'}
 
   isexe@2.0.0:
@@ -3455,7 +3455,7 @@ snapshots:
     dependencies:
       is-inside-container: 1.0.0
 
-  isbot@5.1.22: {}
+  isbot@5.1.25: {}
 
   isexe@2.0.0: {}
 
