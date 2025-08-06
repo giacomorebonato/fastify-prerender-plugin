@@ -25,7 +25,7 @@ importers:
         version: 1.6.3
       tmp:
         specifier: ^0.2.3
-        version: 0.2.3
+        version: 0.2.4
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.4
@@ -41,7 +41,7 @@ importers:
         version: 1.12.2
       pkgroll:
         specifier: ^2.5.1
-        version: 2.15.0(typescript@5.9.2)
+        version: 2.15.1(typescript@5.9.2)
       release-it:
         specifier: ^19.0.0
         version: 19.0.4(@types/node@22.17.0)
@@ -1585,8 +1585,8 @@ packages:
   pkg-types@2.2.0:
     resolution: {integrity: sha512-2SM/GZGAEkPp3KWORxQZns4M+WSeXbC2HEvmOIJe3Cmiv6ieAJvdVhDldtHqM5J1Y7MrR1XhkBT/rMlhh9FdqQ==}
 
-  pkgroll@2.15.0:
-    resolution: {integrity: sha512-decQDsHWE1BRVurrgxhJYtv0LncjynyMFGHMTCJiqd7gWO13u6JPM1GXzDjqx7LS9dd2C1xpmAW4S0VeGvC4Gg==}
+  pkgroll@2.15.1:
+    resolution: {integrity: sha512-nHBDDRzWT8KbugYIWPT5AahN1pUMg9Uxqlr3YiMmB0JRl91e1smspNN2k7aOMbjDbh7Q+mnE9JGjUiCeik/NQA==}
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
@@ -1827,8 +1827,8 @@ packages:
     resolution: {integrity: sha512-jRCJlojKnZ3addtTOjdIqoRuPEKBvNXcGYqzO6zWZX8KfKEpnGY5jfggJQ3EjKuu8D4bJRr0y+cYJFmYbImXGw==}
     engines: {node: '>=0.6.0'}
 
-  tmp@0.2.3:
-    resolution: {integrity: sha512-nZD7m9iCPC5g0pYmcaxogYKggSfLsdxl8of3Q/oIbqCqLLIO9IAF0GWjX1z9NZRHPiXv8Wex4yDCaZsgEw0Y8w==}
+  tmp@0.2.4:
+    resolution: {integrity: sha512-UdiSoX6ypifLmrfQ/XfiawN6hkjSBpCjhKxxZcWlUUmoXLaCKQU0bx4HF/tdDK2uzRuchf1txGvrWBzYREssoQ==}
     engines: {node: '>=14.14'}
 
   to-regex-range@5.0.1:
@@ -3348,7 +3348,7 @@ snapshots:
       exsolve: 1.0.7
       pathe: 2.0.3
 
-  pkgroll@2.15.0(typescript@5.9.2):
+  pkgroll@2.15.1(typescript@5.9.2):
     dependencies:
       '@rollup/plugin-alias': 5.1.1(rollup@4.46.2)
       '@rollup/plugin-commonjs': 28.0.6(rollup@4.46.2)
@@ -3629,7 +3629,7 @@ snapshots:
     dependencies:
       os-tmpdir: 1.0.2
 
-  tmp@0.2.3: {}
+  tmp@0.2.4: {}
 
   to-regex-range@5.0.1:
     dependencies:
