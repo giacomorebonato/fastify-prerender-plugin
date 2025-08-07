@@ -21,7 +21,7 @@
 	"author": "Giacomo Rebonato",
 	"license": "MIT",
 	"devDependencies": {
-		"@biomejs/biome": "1.9.4",
+		"@biomejs/biome": "2.1.4",
 		"@types/node": "^22.10.1",
 		"@types/tmp": "^0.2.6",
 		"lefthook": "^1.8.5",
