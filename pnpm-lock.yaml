@@ -25,7 +25,7 @@ importers:
         version: 1.6.3
       tmp:
         specifier: ^0.2.3
-        version: 0.2.3
+        version: 0.2.4
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.4
@@ -41,7 +41,7 @@ importers:
         version: 1.12.2
       pkgroll:
         specifier: ^2.5.1
-        version: 2.15.0(typescript@5.9.2)
+        version: 2.15.3(typescript@5.9.2)
       release-it:
         specifier: ^19.0.0
         version: 19.0.4(@types/node@22.17.0)
@@ -854,6 +854,9 @@ packages:
   citty@0.1.6:
     resolution: {integrity: sha512-tskPPKEs8D2KPafUypv2gxwJP8h/OaJmC82QQGGDQcHvXX43xF2VDACcJVmZ0EuSxkpO9Kc4MlrA3q0+FG58AQ==}
 
+  cjs-module-lexer@2.1.0:
+    resolution: {integrity: sha512-UX0OwmYRYQQetfrLEZeewIFFI+wSTofC+pMBLNuH3RUuu/xzG1oz84UCEDOSoQlN3fZ4+AzmV50ZYvGqkMh9yA==}
+
   cli-cursor@5.0.0:
     resolution: {integrity: sha512-aCj4O5wKyszjMmDT4tZj93kxyydN/K5zPWSCe6/0AV/AA1pqe5ZBIw0a2ZfPQV7lL5/yb5HsUreJ6UFAF1tEQw==}
     engines: {node: '>=18'}
@@ -1585,8 +1588,8 @@ packages:
   pkg-types@2.2.0:
     resolution: {integrity: sha512-2SM/GZGAEkPp3KWORxQZns4M+WSeXbC2HEvmOIJe3Cmiv6ieAJvdVhDldtHqM5J1Y7MrR1XhkBT/rMlhh9FdqQ==}
 
-  pkgroll@2.15.0:
-    resolution: {integrity: sha512-decQDsHWE1BRVurrgxhJYtv0LncjynyMFGHMTCJiqd7gWO13u6JPM1GXzDjqx7LS9dd2C1xpmAW4S0VeGvC4Gg==}
+  pkgroll@2.15.3:
+    resolution: {integrity: sha512-yEuitslh2Y2ZhH3eX61Y5gTCqxC9KDcQ4gmsjQWwtlk5R3/n8rlkPaxZFT7e4QybeAOonnlm8xlIM5HUk7Ok9Q==}
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
@@ -1827,8 +1830,8 @@ packages:
     resolution: {integrity: sha512-jRCJlojKnZ3addtTOjdIqoRuPEKBvNXcGYqzO6zWZX8KfKEpnGY5jfggJQ3EjKuu8D4bJRr0y+cYJFmYbImXGw==}
     engines: {node: '>=0.6.0'}
 
-  tmp@0.2.3:
-    resolution: {integrity: sha512-nZD7m9iCPC5g0pYmcaxogYKggSfLsdxl8of3Q/oIbqCqLLIO9IAF0GWjX1z9NZRHPiXv8Wex4yDCaZsgEw0Y8w==}
+  tmp@0.2.4:
+    resolution: {integrity: sha512-UdiSoX6ypifLmrfQ/XfiawN6hkjSBpCjhKxxZcWlUUmoXLaCKQU0bx4HF/tdDK2uzRuchf1txGvrWBzYREssoQ==}
     engines: {node: '>=14.14'}
 
   to-regex-range@5.0.1:
@@ -2619,6 +2622,8 @@ snapshots:
     dependencies:
       consola: 3.4.2
 
+  cjs-module-lexer@2.1.0: {}
+
   cli-cursor@5.0.0:
     dependencies:
       restore-cursor: 5.1.0
@@ -3348,7 +3353,7 @@ snapshots:
       exsolve: 1.0.7
       pathe: 2.0.3
 
-  pkgroll@2.15.0(typescript@5.9.2):
+  pkgroll@2.15.3(typescript@5.9.2):
     dependencies:
       '@rollup/plugin-alias': 5.1.1(rollup@4.46.2)
       '@rollup/plugin-commonjs': 28.0.6(rollup@4.46.2)
@@ -3357,6 +3362,7 @@ snapshots:
       '@rollup/plugin-json': 6.1.0(rollup@4.46.2)
       '@rollup/plugin-node-resolve': 16.0.1(rollup@4.46.2)
       '@rollup/pluginutils': 5.2.0(rollup@4.46.2)
+      cjs-module-lexer: 2.1.0
       esbuild: 0.25.8
       magic-string: 0.30.17
       rollup: 4.46.2
@@ -3629,7 +3635,7 @@ snapshots:
     dependencies:
       os-tmpdir: 1.0.2
 
-  tmp@0.2.3: {}
+  tmp@0.2.4: {}
 
   to-regex-range@5.0.1:
     dependencies:
