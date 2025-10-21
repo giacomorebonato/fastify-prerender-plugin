@@ -41,7 +41,7 @@ importers:
         version: 1.13.6
       pkgroll:
         specifier: ^2.5.1
-        version: 2.20.0(typescript@5.9.3)
+        version: 2.20.1(typescript@5.9.3)
       release-it:
         specifier: ^19.0.0
         version: 19.0.5(@types/node@22.18.11)
@@ -1586,8 +1586,8 @@ packages:
   pkg-types@2.3.0:
     resolution: {integrity: sha512-SIqCzDRg0s9npO5XQ3tNZioRY1uK06lA41ynBC1YmFTmnY6FjUjVt6s4LoADmwoig1qqD0oK8h1p/8mlMx8Oig==}
 
-  pkgroll@2.20.0:
-    resolution: {integrity: sha512-yutAAHA95Y2Ma/hM5sOGUsNXq/ARuohh6gD+2GocvjcAHM+abZvZ1VZe3PUx12YNXzltnS7C9nnKJF+omsDu8g==}
+  pkgroll@2.20.1:
+    resolution: {integrity: sha512-+ljnIUQDxOgceLmtM7P3jj88GGk6P8YMqT/EkwKQXIgnsAX7W4LhcMQXQlWYfDE9Rg08k+57FG1omqaeT8+gew==}
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
@@ -1661,8 +1661,8 @@ packages:
     resolution: {integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==}
     engines: {node: '>=0.10.0'}
 
-  resolve@1.22.10:
-    resolution: {integrity: sha512-NPRy+/ncIMeDlTAsuqwKIiferiawhefFJtkNSW0qZJEqMEb+qBt/77B/jGeeek+F0uOeN05CDa6HXbbIgtVX4w==}
+  resolve@1.22.11:
+    resolution: {integrity: sha512-RfqAvLnMl313r7c9oclB1HhUEAezcpLjz95wFH4LVuhk9JF/r22qmVP9AMmOU4vMX7Q8pN8jwNg/CSpdFnMjTQ==}
     engines: {node: '>= 0.4'}
     hasBin: true
 
@@ -2323,7 +2323,7 @@ snapshots:
       '@types/resolve': 1.20.2
       deepmerge: 4.3.1
       is-module: 1.0.0
-      resolve: 1.22.10
+      resolve: 1.22.11
     optionalDependencies:
       rollup: 4.52.5
 
@@ -3335,7 +3335,7 @@ snapshots:
       exsolve: 1.0.7
       pathe: 2.0.3
 
-  pkgroll@2.20.0(typescript@5.9.3):
+  pkgroll@2.20.1(typescript@5.9.3):
     dependencies:
       '@rollup/plugin-alias': 5.1.1(rollup@4.52.5)
       '@rollup/plugin-commonjs': 28.0.8(rollup@4.52.5)
@@ -3447,7 +3447,7 @@ snapshots:
 
   require-from-string@2.0.2: {}
 
-  resolve@1.22.10:
+  resolve@1.22.11:
     dependencies:
       is-core-module: 2.16.1
       path-parse: 1.0.7
