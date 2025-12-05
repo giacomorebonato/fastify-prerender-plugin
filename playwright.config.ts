@@ -1,5 +1,6 @@
 import { defineConfig, devices } from '@playwright/test'
 
+// biome-ignore lint/style/noDefaultExport: it's needed
 export default defineConfig({
 	testDir: './tests',
 	fullyParallel: true,

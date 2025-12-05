@@ -1,27 +1,55 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.3.8/schema.json",
+	"root": true,
 	"vcs": {
 		"enabled": false,
 		"clientKind": "git",
-		"useIgnoreFile": false
+		"useIgnoreFile": true
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": ["dist/", "chrome/"]
+		"includes": [
+			"**/*.ts",
+			"**/*.tsx",
+			"**/*.js",
+			"**/*.jsx",
+			"**/*.json",
+			"!**/node_modules",
+			"!**/dist",
+			"!**/chrome",
+			"!**/routeTree.gen.ts",
+			"!**/prisma/generated",
+			"!backend/src/schemas/zod.ts",
+			"!**/test-results",
+			"!**/playwright-report",
+			"!**/storybook-static"
+		]
 	},
 	"formatter": {
 		"enabled": true,
 		"indentStyle": "tab"
 	},
-	"organizeImports": {
-		"enabled": true
-	},
+	"assist": { "actions": { "source": { "organizeImports": "on" } } },
 	"linter": {
 		"enabled": true,
 		"rules": {
+			"correctness": {
+				"noUnusedImports": "error",
+				"useUniqueElementIds": "off"
+			},
 			"recommended": true,
 			"style": {
-				"noUnusedTemplateLiteral": "off"
+				"noUnusedTemplateLiteral": "off",
+				"noParameterAssign": "error",
+				"useAsConstAssertion": "error",
+				"useDefaultParameterLast": "error",
+				"useEnumInitializers": "error",
+				"useSelfClosingElements": "error",
+				"useSingleVarDeclarator": "error",
+				"useNumberNamespace": "error",
+				"noInferrableTypes": "error",
+				"noUselessElse": "error",
+				"noDefaultExport": "warn"
 			}
 		}
 	},
@@ -30,6 +58,11 @@
 			"semicolons": "asNeeded",
 			"quoteStyle": "single",
 			"jsxQuoteStyle": "single"
+		}
+	},
+	"json": {
+		"parser": {
+			"allowComments": true
 		}
 	}
 }

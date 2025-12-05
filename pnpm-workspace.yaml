@@ -1,0 +1,4 @@
+onlyBuiltDependencies:
+  - '@lightpanda/browser'
+  - esbuild
+  - lefthook

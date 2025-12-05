@@ -9,7 +9,7 @@ await app.register(prerenderPlugin, {
 	port: 3_000,
 })
 
-app.get('/', (request, reply) => {
+app.get('/', (_request, reply) => {
 	reply.type('text/html').send(`
 <html>
   <body>
