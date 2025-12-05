@@ -35,14 +35,14 @@
 		"pkgroll": "^2.5.1",
 		"release-it": "^19.0.0",
 		"release-it-pnpm": "^4.6.3",
-		"typescript": "^5.7.2"
+		"typescript": "^5.7.2",
+		"@playwright/test": "^1.49.0"
 	},
 	"peerDependencies": {
 		"fastify": "^5.1.0"
 	},
 	"dependencies": {
 		"@lightpanda/browser": "^1.0.1",
-		"@playwright/test": "^1.49.0",
 		"fastify-plugin": "^5.0.1",
 		"isbot": "^5.1.17",
 		"sanitize-filename": "^1.6.3",
