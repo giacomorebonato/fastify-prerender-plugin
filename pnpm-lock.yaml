@@ -11,9 +11,6 @@ importers:
       '@lightpanda/browser':
         specifier: ^1.0.1
         version: 1.0.1
-      '@playwright/test':
-        specifier: ^1.49.0
-        version: 1.57.0
       fastify:
         specifier: ^5.1.0
         version: 5.6.2
@@ -33,6 +30,9 @@ importers:
       '@biomejs/biome':
         specifier: 2.3.8
         version: 2.3.8
+      '@playwright/test':
+        specifier: ^1.49.0
+        version: 1.57.0
       '@types/node':
         specifier: ^22.10.1
         version: 22.19.1
