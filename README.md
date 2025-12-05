@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/fastify-prerender-plugin.svg)](https://www.npmjs.com/package/fastify-prerender-plugin)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-> **Fastify Prerender Plugin**: Effortlessly add SEO-friendly server-side rendering (SSR) to your Single Page Applications (SPAs) using Fastify and Playwright. Automatically detect bots (Google, Facebook, Twitter, etc.) and serve fully rendered HTML for improved search engine indexing and social sharing.
+> **Fastify Prerender Plugin**: Effortlessly add SEO-friendly server-side rendering (SSR) to your Single Page Applications (SPAs) using Fastify and Lightpanda. Automatically detect bots (Google, Facebook, Twitter, etc.) and serve fully rendered HTML for improved search engine indexing and social sharing.
 
 ---
 
@@ -19,7 +19,7 @@
 - [Contributing](#contributing)
 - [Support](#support)
 - [License](#license)
-- [Running Playwright in Docker](#running-playwright-in-docker)
+- [Running with Lightpanda](#running-with-lightpanda)
 
 ---
 
@@ -28,9 +28,10 @@
 - 🕸️ **SEO Optimization**: Serve prerendered HTML to search engine and social media bots for better indexing and previews.
 - ⚡ **Fastify Integration**: Simple plugin for Fastify, the fast and low-overhead web framework.
 - 🧠 **Bot Detection**: Uses [isbot](https://www.npmjs.com/package/isbot) to accurately detect crawlers and bots.
-- 🎭 **Playwright Rendering**: Renders your SPA using Playwright for accurate, up-to-date HTML snapshots.
+- 🎭 **Lightpanda Rendering**: Renders your SPA using [Lightpanda](https://lightpanda.io), a lightweight headless browser with minimal memory footprint for accurate, up-to-date HTML snapshots.
 - 🔧 **Configurable**: Easily specify which URLs to prerender and server details.
 - 🛡️ **Zero Impact**: Only prerenders for bots—regular users get the normal SPA experience.
+- 💾 **Low Memory Footprint**: Lightpanda's efficient architecture keeps memory usage minimal compared to traditional headless browsers.
 
 ---
 
@@ -38,7 +39,7 @@
 
 - Node.js (v22+ recommended)
 - Fastify
-- Playwright (installed automatically)
+- Lightpanda (installed automatically)
 
 This plugin works best when Fastify serves the HTML page for your SPA.
 
@@ -100,8 +101,8 @@ The `prerenderPlugin` accepts the following options:
 ## How It Works
 
 1. **Bot Detection**: On each request, the plugin checks the `User-Agent` header using [isbot](https://www.npmjs.com/package/isbot).
-2. **Prerendering**: If the request is from a bot and matches a configured URL, Playwright launches a headless browser to render the page.
-3. **HTML Snapshot**: The fully rendered HTML is returned to the bot, ensuring proper SEO and social media previews.
+2. **Prerendering**: If the request is from a bot and matches a configured URL, Lightpanda launches to render the page with minimal memory usage.
+3. **HTML Snapshot**: The fully rendered HTML is cached (5 minutes) and returned to the bot, ensuring proper SEO and social media previews.
 4. **Normal Users**: All other requests receive the standard SPA HTML, with no performance impact.
 
 ---
@@ -111,9 +112,8 @@ The `prerenderPlugin` accepts the following options:
 The following scripts are available in the `package.json`:
 
 - `build`: Builds the project using `pkgroll`.
-- `postinstall`: Installs the stable version of Chrome using Playwright.
 - `release`: Releases the project using `release-it`.
-- `test`: Runs the tests using Playwright.
+- `test`: Runs the end-to-end tests using Playwright Test.
 - `format`: Formats the code using Biome.
 
 ---
@@ -134,40 +134,23 @@ If you have questions or need help, please open an issue on the [GitHub reposito
 
 This project is licensed under the MIT License.
 
-## Running Playwright in Docker
+## Running with Lightpanda
 
-You can run Playwright scripts in a Docker environment using the official Playwright Docker images. This is useful for consistent, isolated browser environments in CI/CD or production.
+This plugin uses [Lightpanda](https://lightpanda.io), a lightweight headless browser designed for server-side rendering with a minimal memory footprint. Lightpanda is automatically installed when you install the plugin via the `@lightpanda/browser` package.
 
-### 1. Pull the Playwright Docker Image
+### Why Lightpanda?
 
-```sh
-docker pull mcr.microsoft.com/playwright:v1.52.0-noble
-```
+- **Low Memory Footprint**: Significantly lighter than traditional headless browsers like Chromium or Firefox
+- **Fast Startup**: Quick initialization for on-demand prerendering
+- **Designed for SSR**: Built specifically for server-side rendering use cases
+- **Easy Installation**: No complex browser dependencies or large downloads
 
-### 2. Run the Docker Container
+### Custom Lightpanda Executable Path
 
-For trusted code (e.g., end-to-end tests):
-
-```sh
-docker run -it --rm --ipc=host mcr.microsoft.com/playwright:v1.52.0-noble /bin/bash
-```
-
-For crawling or scraping untrusted websites, use a separate user and seccomp profile:
+By default, Lightpanda is installed to `~/.cache/lightpanda-node/lightpanda`. If you need to use a custom executable path, set the `LIGHTPANDA_EXECUTABLE_PATH` environment variable:
 
 ```sh
-docker run -it --rm --ipc=host --user pwuser --security-opt seccomp=seccomp_profile.json mcr.microsoft.com/playwright:v1.52.0-noble /bin/bash
+export LIGHTPANDA_EXECUTABLE_PATH=/path/to/lightpanda
 ```
 
-Where `seccomp_profile.json` is a Docker seccomp profile with extra user namespace cloning permissions. See the [Playwright Docker docs](https://playwright.dev/docs/docker) for details.
-
-### 3. Recommended Docker Flags
-
-- Use `--init` to avoid zombie processes.
-- Use `--ipc=host` to prevent Chromium from running out of memory.
-- If you see errors launching Chromium, try `--cap-add=SYS_ADMIN` (for local development only).
-
-### 4. Version Matching
-
-Ensure the Playwright version in your project matches the Docker image version to avoid browser executable issues.
-
-For more details and advanced usage, see the [official Playwright Docker documentation](https://playwright.dev/docs/docker).
+For more information about Lightpanda, visit [https://lightpanda.io](https://lightpanda.io).
