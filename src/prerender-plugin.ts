@@ -16,7 +16,14 @@ export const prerenderPlugin = fastifyPlugin<{
 		const tmpobj = tmp.dirSync()
 
 		app.addHook('onRequest', async (request, reply) => {
-			const requestFromBot = isbot(request.headers['user-agent'])
+			const userAgent = request.headers['user-agent']
+
+			// Exclude Lightpanda from bot detection to prevent circular dependency
+			if (userAgent?.startsWith('Lightpanda/')) {
+				return
+			}
+
+			const requestFromBot = isbot(userAgent)
 
 			if (!requestFromBot || request.method !== 'GET') {
 				return
@@ -75,7 +82,7 @@ export const prerenderPlugin = fastifyPlugin<{
 
 			try {
 				Fs.writeFileSync(filepath, html)
-			} catch (error) {
+			} catch (_error) {
 				request.log.error(`Couldn't write cache in ${filepath}`)
 			}
 
@@ -90,4 +97,5 @@ export const prerenderPlugin = fastifyPlugin<{
 	},
 )
 
+// biome-ignore lint/style/noDefaultExport: it's handy to have
 export default prerenderPlugin
