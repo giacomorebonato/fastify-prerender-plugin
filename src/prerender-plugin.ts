@@ -16,14 +16,18 @@ export const prerenderPlugin = fastifyPlugin<{
 		const tmpobj = tmp.dirSync()
 
 		app.addHook('onRequest', async (request, reply) => {
-			const userAgent = request.headers['user-agent']
+			const userAgent = request.headers['user-agent'] ?? ''
 
 			// Exclude Lightpanda from bot detection to prevent circular dependency
-			if (userAgent?.startsWith('Lightpanda/')) {
+			if (userAgent.startsWith('Lightpanda/')) {
 				return
 			}
 
-			const requestFromBot = isbot(userAgent)
+			const requestFromBot =
+				isbot(userAgent) ||
+				userAgent.toLowerCase().startsWith('facebookexternalhit') ||
+				userAgent.toLowerCase().startsWith('whatsapp') ||
+				userAgent.toLowerCase().startsWith('twitterbot')
 
 			if (!requestFromBot || request.method !== 'GET') {
 				return
