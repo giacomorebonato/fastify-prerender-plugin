@@ -23,7 +23,7 @@ if (!isMainThread) {
 		disableHostVerification: false,
 	}
 
-	const res = await lightpanda.fetch(workerData.url, options)
-
-	parentPort?.postMessage(res.toString())
+	lightpanda.fetch(workerData.url, options).then((response) => {
+		parentPort?.postMessage(response.toString())
+	})
 }
