@@ -1,3 +1,4 @@
+import { fileURLToPath } from 'node:url'
 import {
 	isMainThread,
 	parentPort,
@@ -8,7 +9,7 @@ import { type LightpandaFetchOptions, lightpanda } from '@lightpanda/browser'
 
 export async function requestFromBrowser(url: string): Promise<string> {
 	return new Promise<string>((resolve, reject) => {
-		const worker = new Worker(import.meta.filename, {
+		const worker = new Worker(fileURLToPath(import.meta.url), {
 			workerData: { url },
 		})
 
