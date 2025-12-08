@@ -8,7 +8,7 @@ import { requestFromBrowser } from './request-from-browser.ts'
 
 export const prerenderPlugin = fastifyPlugin<{
 	urls: (string | RegExp)[]
-	host: string
+	host?: string
 	port: number
 	tmpPath?: string
 }>(
@@ -57,7 +57,7 @@ export const prerenderPlugin = fastifyPlugin<{
 				return
 			}
 
-			const url = `http://${options.host}:${options.port}${request.url}`
+			const url = `http://${options.host ?? 'localhost'}:${options.port}${request.url}`
 			const filepath = Path.join(
 				options.tmpPath ?? tmpobj.name,
 				sanitize(`${url}.html`),
