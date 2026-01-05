@@ -1,3 +1,4 @@
+import Crypto from 'node:crypto'
 import Fs from 'node:fs'
 import Path from 'node:path'
 import { fastifyPlugin } from 'fastify-plugin'
@@ -37,14 +38,19 @@ export const prerenderPlugin = fastifyPlugin<{
 
 			let matches = false
 
+			// Extract pathname from request URL (strip query parameters for string matching)
+			const requestPathname = request.url.split('?')[0]
+
 			for (const url of options.urls) {
 				if (typeof url === 'string') {
-					if (url === request.url) {
+					// For string URLs, match only the pathname (ignore query parameters)
+					if (url === requestPathname) {
 						matches = true
 
 						break
 					}
 				} else {
+					// For RegExp URLs, test against full request.url (including query parameters)
 					if (url.test(request.url)) {
 						matches = true
 
@@ -58,10 +64,23 @@ export const prerenderPlugin = fastifyPlugin<{
 			}
 
 			const url = `http://${options.host ?? 'localhost'}:${options.port}${request.url}`
-			const filepath = Path.join(
-				options.tmpPath ?? tmpobj.name,
-				sanitize(`${url}.html`),
-			)
+
+			// Parse URL to handle query parameters separately
+			const urlObj = new URL(url)
+			const pathname = sanitize(urlObj.pathname.replace(/\//g, '_'))
+			const queryString = urlObj.search
+
+			// Create unique filename based on path and query parameters
+			let filename = pathname || 'index'
+			if (queryString) {
+				const queryHash = Crypto.createHash('md5')
+					.update(queryString)
+					.digest('hex')
+				filename = `${filename}_${queryHash}`
+			}
+			filename = `${filename}.html`
+
+			const filepath = Path.join(options.tmpPath ?? tmpobj.name, filename)
 
 			if (Fs.existsSync(filepath)) {
 				const fileStat = Fs.statSync(filepath)
