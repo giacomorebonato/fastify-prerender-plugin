@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@lightpanda/browser':
         specifier: ^1.0.1
-        version: 1.0.1
+        version: 1.1.0
       fastify:
         specifier: ^5.1.0
         version: 5.7.4
@@ -433,8 +433,8 @@ packages:
   '@jridgewell/sourcemap-codec@1.5.5':
     resolution: {integrity: sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==}
 
-  '@lightpanda/browser@1.0.1':
-    resolution: {integrity: sha512-vjY6aoEgpL3QHjJNr5cyU+OhcsQ6S+pWybgEKdIhJ0wheCTiW0xZlfoMCkQGo9Jug2sJouUOVN3B6KSAorp+Gg==}
+  '@lightpanda/browser@1.1.0':
+    resolution: {integrity: sha512-PBHyFi70QsmsQuwsuaER3HAeQj+ExTSdcgODvI3tnfhh8EHDK1HILu5N2E6DE9yshHN/s+ddKugmTZMJqDr8gQ==}
     hasBin: true
 
   '@nodelib/fs.scandir@2.1.5':
@@ -2255,7 +2255,7 @@ snapshots:
 
   '@jridgewell/sourcemap-codec@1.5.5': {}
 
-  '@lightpanda/browser@1.0.1':
+  '@lightpanda/browser@1.1.0':
     dependencies:
       yargs: 18.0.0
 
