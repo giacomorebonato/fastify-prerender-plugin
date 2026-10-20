@@ -33,7 +33,7 @@
 		"@types/tmp": "^0.2.6",
 		"lefthook": "^2.0.0",
 		"pkgroll": "^2.5.1",
-		"release-it": "^19.0.0",
+		"release-it": "^21.0.0",
 		"release-it-pnpm": "^4.6.3",
 		"typescript": "^5.7.2",
 		"@playwright/test": "^1.49.0"
