@@ -168,7 +168,7 @@ importers:
     dependencies:
       '@lightpanda/browser':
         specifier: ^1.0.1
-        version: 1.2.0
+        version: 1.6.0
       fastify:
         specifier: ^5.1.0
         version: 5.8.4
@@ -607,8 +607,9 @@ packages:
   '@jridgewell/sourcemap-codec@1.5.5':
     resolution: {integrity: sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==}
 
-  '@lightpanda/browser@1.2.0':
-    resolution: {integrity: sha512-Ssvq+cAsXPH+bH7HFnCwZG2+nb0gyds7PqHU9B7WcT22oNGA/yG3Q4iG6DPq1hP1QNfc1l3u4q4gsfNvhzLdyg==}
+  '@lightpanda/browser@1.6.0':
+    resolution: {integrity: sha512-o5nbBJqsuaXhoScCChCuQPwzw9nHbZI0U8vYh+SaR7jGmBNEMShtyJHqK3UBNl2b9x5XJa+3/zASZY0/DHhAJQ==}
+    engines: {node: '22', yarn: '4'}
     hasBin: true
 
   '@nodelib/fs.scandir@2.1.5':
@@ -2386,7 +2387,7 @@ snapshots:
   '@fastify/ajv-compiler@4.0.5':
     dependencies:
       ajv: 8.18.0
-      ajv-formats: 3.0.1(ajv@8.18.0)
+      ajv-formats: 3.0.1
       fast-uri: 3.1.0
 
   '@fastify/error@4.2.0': {}
@@ -2527,7 +2528,7 @@ snapshots:
 
   '@jridgewell/sourcemap-codec@1.5.5': {}
 
-  '@lightpanda/browser@1.2.0':
+  '@lightpanda/browser@1.6.0':
     dependencies:
       yargs: 18.0.0
 
@@ -2829,8 +2830,8 @@ snapshots:
 
   agent-base@9.0.0: {}
 
-  ajv-formats@3.0.1(ajv@8.18.0):
-    optionalDependencies:
+  ajv-formats@3.0.1:
+    dependencies:
       ajv: 8.18.0
 
   ajv@8.18.0:
@@ -3207,7 +3208,7 @@ snapshots:
     dependencies:
       '@fastify/merge-json-schemas': 0.2.1
       ajv: 8.18.0
-      ajv-formats: 3.0.1(ajv@8.18.0)
+      ajv-formats: 3.0.1
       fast-uri: 3.1.0
       json-schema-ref-resolver: 3.0.0
       rfdc: 1.4.1
