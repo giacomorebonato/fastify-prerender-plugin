@@ -29,7 +29,7 @@
 	"license": "MIT",
 	"devDependencies": {
 		"@biomejs/biome": "2.6.4",
-		"@types/node": "^24.0.0",
+		"@types/node": "^26.0.0",
 		"@types/tmp": "^0.2.6",
 		"lefthook": "^2.0.0",
 		"pkgroll": "^2.5.1",
